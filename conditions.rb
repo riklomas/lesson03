@@ -1,16 +1,19 @@
  
 # data to be used in these exercises
 
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+months = ["January", "Februajry", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 # 1. the String class method .include? returns true 
 # if the string contains sub-string or letter passed to the method
 # write a loop which outputs months which do not begin with the letter "J"
 
+months.each do |month|
+	puts month unless month.include?("J")
 
-
-
-
+	# unless month.include?("J")
+	# 	puts month
+	# end
+end
 
 
 
@@ -37,8 +40,25 @@ loop do
 
 	input = $stdin.gets.chomp
 
-	break
+	if input == "quit"
+		puts "Bye!"
+		break
+	end
+
+	# Turn my input into an integer
+	input = input.to_i
+	unless months[input - 1] == random_month
+		puts "Game Over!"
+		break
+	end
 end
+
+
+
+
+
+
+
 
 
 
